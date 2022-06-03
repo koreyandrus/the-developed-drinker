@@ -1,6 +1,1 @@
-@font-face {
-  font-family: 'Olde English';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Olde English'), url('https://fonts.cdnfonts.com/s/7873/OldeEnglish.woff') format('woff');
-}
+@import url('http://fonts.cdnfonts.com/css/olde-english');
