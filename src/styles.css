@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Olde English';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Olde English'), url('https://fonts.cdnfonts.com/s/7873/OldeEnglish.woff') format('woff');
+}
