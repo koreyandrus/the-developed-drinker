@@ -1,7 +1,7 @@
 
 # The Developed Drinker
 
-An app to get you a random cocktail recipe, or to help you make the perfect cocktail for you!
+An app to get you a random cocktail recipe, or to help find the perfect cocktail for you!
 
 
 ## Authors
