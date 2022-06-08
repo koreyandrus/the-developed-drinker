@@ -5,11 +5,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+
 import { DrinkComponent } from './drink/drink.component';
 import { SearchComponent } from './search/search.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, DrinkComponent, SearchComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    DrinkComponent,
+    SearchComponent,
+    LandingComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
 
   providers: [],
