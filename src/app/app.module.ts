@@ -6,9 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DrinkComponent } from './drink/drink.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, DrinkComponent],
+  declarations: [AppComponent, NavbarComponent, DrinkComponent, SearchComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
 
   providers: [],
