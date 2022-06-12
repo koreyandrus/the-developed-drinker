@@ -1,9 +1,9 @@
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top p-2" src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg" alt="Card image cap">
+  <img class="card-img-top p-2" src="{{ drink.strDrinkThumb }}" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Margarita</h5>
-    <span class="badge badge-success mr-2">Ordinary Drink</span>
-    <span class="badge badge-danger">Alcoholic</span>
-    <a href="#" class="btn btn-primary d-block mx-auto mt-2">Drink Details...</a>
+    <h5 class="card-title text-truncate">{{ drink.strDrink }}</h5>
+    <span class="badge badge-success mr-2">{{ drink.strCategory }}</span>
+    <span class="badge" [ngClass]="{'badge-danger': drink.strAlcoholic === 'Alcoholic', 'badge-success': drink.strAlcoholic === 'Non alcoholic'}">{{ drink.strAlcoholic }}</span>
+    <a class="btn btn-primary d-block mx-auto mt-2">Drink Details...</a>
   </div>
 </div>

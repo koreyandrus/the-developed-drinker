@@ -12,6 +12,6 @@
     </div>
   </div>
 </form>
-<div class="search-results d-flex ">
-  <!-- <app-drink *ngFor="let drink of searchResults"></app-drink> -->
+<div class="search-results d-flex flex-wrap justify-content-center" *ngIf="searchResults">
+  <app-drink class="m-2" *ngFor="let drink of searchResults" [drink]="drink"></app-drink>
 </div>

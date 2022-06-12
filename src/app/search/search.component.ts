@@ -10,7 +10,7 @@ import { ApiService } from '../services/api.service';
 })
 export class SearchComponent implements OnInit {
   searchTerm = new FormControl('');
-  searchResults = {};
+  searchResults: any;
 
   constructor(private apiService: ApiService) {}
 
@@ -20,15 +20,13 @@ export class SearchComponent implements OnInit {
     e.preventDefault();
 
     this.searchCocktail(this.searchTerm.value);
-
-    console.log(this.searchResults);
   }
 
   searchCocktail(search: string) {
-    this.searchResults = this.apiService
-      .searchCocktailName(search)
-      .subscribe((data) => {
-        return data;
-      });
+    this.apiService.searchCocktailName(search).subscribe((data) => {
+      console.log(Object.values(data));
+
+      this.searchResults = Object.values(data)[0];
+    });
   }
 }
