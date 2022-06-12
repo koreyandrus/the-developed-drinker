@@ -1,0 +1,17 @@
+<form class="container mt-2 mb-2" onsubmit="onSubmit()">
+  <div class="search-form">
+    <div class="row">
+      <div class="input-group d-flex justify-content-center">
+        <select name="option" id="option">
+          <option value="drink">Drink</option>
+          <option value="ingredient">Ingredient</option>
+        </select>
+        <input class="w-50" type="text" name="search" id="search" [formControl]="searchTerm">
+        <button (click)="onSubmit($event)">Search</button>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="search-results d-flex flex-wrap justify-content-center" *ngIf="searchResults">
+  <app-drink class="m-2" *ngFor="let drink of searchResults" [drink]="drink"></app-drink>
+</div>

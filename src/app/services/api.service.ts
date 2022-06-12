@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
   constructor(private http: HttpClient) {}
-  private url: string = 'www.thecocktaildb.com/api/json/v1/1/';
+  private url: string = 'https://www.thecocktaildb.com/api/json/v1/1/';
 
   getRandomCocktail() {
     return this.http.get(this.url + 'random.php');
