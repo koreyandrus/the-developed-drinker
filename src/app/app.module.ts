@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DrinkComponent } from './drink/drink.component';
 import { SearchComponent } from './search/search.component';
 import { LandingComponent } from './landing/landing.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,12 @@ import { LandingComponent } from './landing/landing.component';
     SearchComponent,
     LandingComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
 
   providers: [],
   bootstrap: [AppComponent],

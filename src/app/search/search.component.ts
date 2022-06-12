@@ -1,15 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { map } from 'rxjs';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
+  searchTerm = new FormControl('');
+  searchResults = {};
 
-  constructor() { }
+  constructor(private apiService: ApiService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onSubmit(e: Event) {
+    e.preventDefault();
+
+    this.searchCocktail(this.searchTerm.value);
+
+    console.log(this.searchResults);
   }
 
+  searchCocktail(search: string) {
+    this.searchResults = this.apiService
+      .searchCocktailName(search)
+      .subscribe((data) => {
+        return data;
+      });
+  }
 }
