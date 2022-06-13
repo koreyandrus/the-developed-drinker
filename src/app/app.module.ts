@@ -11,6 +11,7 @@ import { SearchComponent } from './search/search.component';
 import { LandingComponent } from './landing/landing.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RandomComponent } from './random/random.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RandomComponent } from './random/random.component';
     SearchComponent,
     LandingComponent,
     RandomComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { ApiService } from '../services/api.service';
 export class SearchComponent implements OnInit {
   searchTerm = new FormControl('');
   searchResults: any;
+  isLoading: boolean = false;
 
   constructor(private apiService: ApiService) {}
 
@@ -23,7 +24,13 @@ export class SearchComponent implements OnInit {
   }
 
   searchCocktail(search: string) {
+    if (!this.searchResults) {
+      this.isLoading = true;
+    }
     this.apiService.searchCocktailName(search).subscribe((data) => {
+      if (data) {
+        this.isLoading = false;
+      }
       console.log(Object.values(data));
 
       this.searchResults = Object.values(data)[0];
