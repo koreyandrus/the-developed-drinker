@@ -8,14 +8,20 @@ import { ApiService } from '../services/api.service';
 })
 export class RandomComponent implements OnInit {
   randomDrink: any;
+  isLoading: boolean = false;
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {}
 
   getRandomDrink() {
+    if (!this.randomDrink) {
+      this.isLoading = true;
+    }
     this.apiService.getRandomCocktail().subscribe((data) => {
-      console.log(Object.values(data)[0][0]);
+      if (data) {
+        this.isLoading = false;
+      }
 
       this.randomDrink = Object.values(data)[0][0];
     });
