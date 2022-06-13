@@ -10,6 +10,7 @@ import { DrinkComponent } from './drink/drink.component';
 import { SearchComponent } from './search/search.component';
 import { LandingComponent } from './landing/landing.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RandomComponent } from './random/random.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DrinkComponent,
     SearchComponent,
     LandingComponent,
+    RandomComponent,
   ],
   imports: [
     BrowserModule,
