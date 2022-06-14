@@ -11,7 +11,6 @@ export class SearchComponent implements OnInit {
   searchTerm = new FormControl('');
   searchResults: any;
   isLoading: boolean = false;
-
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {}
@@ -31,8 +30,6 @@ export class SearchComponent implements OnInit {
       if (data) {
         this.isLoading = false;
       }
-      console.log(Object.values(data));
-
       this.searchResults = Object.values(data)[0];
     });
   }
