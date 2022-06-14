@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { map } from 'rxjs';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -24,6 +23,7 @@ export class SearchComponent implements OnInit {
   }
 
   searchCocktail(search: string) {
+    this.searchResults = null;
     if (!this.searchResults) {
       this.isLoading = true;
     }
