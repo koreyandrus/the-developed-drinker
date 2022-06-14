@@ -1,9 +1,10 @@
 <div class="card" style="width: 18rem;">
+  <app-drink-details *ngIf="showDetails" [drink]="drink" (closeBtnClick)="onCloseDetails()"></app-drink-details>
   <img class="card-img-top p-2" src="{{ drink.strDrinkThumb }}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title text-truncate">{{ drink.strDrink }}</h5>
     <span class="badge badge-success mr-2">{{ drink.strCategory }}</span>
     <span class="badge" [ngClass]="{'badge-danger': drink.strAlcoholic === 'Alcoholic', 'badge-success': drink.strAlcoholic === 'Non alcoholic'}">{{ drink.strAlcoholic }}</span>
-    <a class="btn btn-primary d-block mx-auto mt-2">Drink Details...</a>
+    <a class="btn btn-primary d-block mx-auto mt-2" (click)="onShowDetails()">Drink Details...</a>
   </div>
 </div>
