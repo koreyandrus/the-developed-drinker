@@ -1,11 +1,7 @@
-@import url('http://fonts.cdnfonts.com/css/olde-english');
+@import url("http://fonts.cdnfonts.com/css/olde-english");
 
 body {
-  background: url("/assets/developed_drinker_background.jpg");
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("/assets/developed_drinker_background.jpg") no-repeat center
+    center fixed;
   background-size: cover;
 }
-
-
