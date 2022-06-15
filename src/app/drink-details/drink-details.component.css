@@ -5,6 +5,8 @@
   right: 0;
   bottom: 0;
 
+  padding: 5px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,4 +20,13 @@
   left: 0;
   z-index: 999;
   cursor: pointer;
+}
+
+.title {
+  text-align: left;
+}
+
+.ingredients li {
+  list-style: none;
+  font-weight: bold;
 }
