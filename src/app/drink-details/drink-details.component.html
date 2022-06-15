@@ -1,12 +1,17 @@
-<div class="drink-details-container card" @fadeSlideInOut>
+<div class="drink-details-container" @fadeSlideInOut>
   <div class="close-btn">
-      <a class="float-right" (click)="onClose()">
+      <a class="" (click)="onClose()">
           <span class="cross-icon">&#10006;</span>
       </a>
   </div>
   <h5 class="title">{{ drink.strDrink }}</h5>
-  <ul class="ingredients">
-    <li *ngFor="let ingredient of ingredients">{{ ingredient }}</li>
-    <p>{{ drink.strInstructions }}</p>
-  </ul>
+  <div class="ingredients">
+    <div class="ingredient">
+      <p class="item" *ngFor="let ingredient of ingredients">{{ ingredient }}</p>
+    </div>
+    <div class="measurements">
+      <p class="item" *ngFor="let measurement of measurements">{{ measurement }}</p>
+    </div>
+  </div>
+  <p class="directions">{{ drink.strInstructions }}</p>
 </div>

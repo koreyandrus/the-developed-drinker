@@ -25,6 +25,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class DrinkDetailsComponent implements OnInit {
   ingredients: string[] = [];
+  measurements: string[] = [];
   @Input() drink: any;
 
   @Output() closeBtnClick = new EventEmitter();
@@ -33,6 +34,8 @@ export class DrinkDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getIngredients();
+    this.getMeasurements();
+    console.log(this.measurements);
   }
 
   getIngredients() {
@@ -40,6 +43,15 @@ export class DrinkDetailsComponent implements OnInit {
       const ing = this.drink['strIngredient' + i];
       if (ing !== null) {
         this.ingredients.push(ing);
+      }
+    }
+  }
+
+  getMeasurements() {
+    for (let i = 1; i < 15; i++) {
+      const mea = this.drink['strMeasure' + i];
+      if (mea !== null) {
+        this.measurements.push(mea);
       }
     }
   }

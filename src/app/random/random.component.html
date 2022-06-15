@@ -1,8 +1,13 @@
-<div class="container d-flex justify-content-center align-items-center">
-  <button class="btn btn-lg btn-danger rounded-pill mt-5" (click)="getRandomDrink()">Random!</button>
+
+<div class="container">
+  <div class="choice">
+    <p>Click to get a random drink!</p>
+    <button class="button btn-primary" (click)="getRandomDrink()">Random!</button>
+  </div>
 </div>
 
 <loading-spinner *ngIf="isLoading"></loading-spinner>
+
 
 <div class="random-drink d-flex justify-content-center mt-5" *ngIf="randomDrink">
   <app-drink [drink]="randomDrink"></app-drink>
