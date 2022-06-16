@@ -1,0 +1,10 @@
+.card {
+  background-color: rgb(34, 145, 139);
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+h5 {
+  font-size: 25px;
+  font-family: cursive;
+}
