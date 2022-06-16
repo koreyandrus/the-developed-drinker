@@ -15,6 +15,7 @@ export class RandomComponent implements OnInit {
   ngOnInit(): void {}
 
   getRandomDrink() {
+    this.randomDrink = null;
     if (!this.randomDrink) {
       this.isLoading = true;
     }

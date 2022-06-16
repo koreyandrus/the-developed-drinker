@@ -8,25 +8,54 @@
   padding: 5px;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  /* justify-content: space-between; */
+
   z-index: 999;
   background-color: rgb(221, 193, 136, 0.95);
 }
 
 .close-btn {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999;
+  top: 0px;
+  left: 5px;
+
+  font-size: 1.5rem;
+
   cursor: pointer;
 }
 
-.title {
-  text-align: left;
+.close-btn a {
+  color: rgba(0, 0, 0, 0.5);
 }
 
-.ingredients li {
-  list-style: none;
+.title {
+  font-size: 1.5rem;
   font-weight: bold;
+  text-align: center;
+
+  margin: 10px 10px;
+}
+
+.ingredients {
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: bold;
+  line-height: 0.5;
+
+  margin: 20px 10px;
+}
+
+.item {
+  word-wrap: break-word;
+  white-space: nowrap;
+}
+
+.directions {
+  overflow-y: scroll;
+}
+
+.directions p {
+  margin: 5px;
 }
