@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RandomComponent } from './random/random.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { DrinkDetailsComponent } from './drink-details/drink-details.component';
+import { SavedComponent } from './saved/saved.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DrinkDetailsComponent } from './drink-details/drink-details.component';
     RandomComponent,
     LoadingSpinnerComponent,
     DrinkDetailsComponent,
+    SavedComponent,
   ],
   imports: [
     BrowserModule,
