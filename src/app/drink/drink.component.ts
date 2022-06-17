@@ -9,10 +9,9 @@ import { SaveDrinkService } from '../services/save-drink.service';
 export class DrinkComponent implements OnInit {
   @Input() drink: any;
 
-
   showDetails: boolean = false;
 
-  constructor( private saveDrinkService: SaveDrinkService) {}
+  constructor(private saveDrinkService: SaveDrinkService) {}
 
   ngOnInit(): void {}
 
@@ -26,6 +25,6 @@ export class DrinkComponent implements OnInit {
   }
 
   onSaveDrink() {
-    this.saveDrinkService.saveDrinkStorage(this.drink)
+    this.saveDrinkService.saveDrink(this.drink);
   }
 }

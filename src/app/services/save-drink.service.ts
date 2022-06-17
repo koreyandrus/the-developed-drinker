@@ -1,27 +1,27 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SaveDrinkService {
+  drinks: any[] = [];
 
-  constructor() { }
+  constructor() {}
 
+  getDrinks() {
+    const drinksJson = localStorage.getItem('drinks');
+    this.drinks = drinksJson !== null ? JSON.parse(drinksJson) : [];
+    return this.drinks;
+  }
 
-getSaveDrink(){
-  localStorage.getItem('key');
-  // JSON.parse(localStorage.getItem('key'));
-}
+  // save drink to local storage
+  saveDrink(drink: any) {
+    this.getDrinks();
+    this.drinks.push(drink);
+    localStorage.setItem('drinks', JSON.stringify(this.drinks));
+    alert('Added ' + drink.strDrink);
+  }
 
-// save drink to local storage
-saveDrinkStorage(drink: any){
-  localStorage.setItem('key', drink);
-  // localStorage.setItem('key', JSON.stringify(object));
-}
-
-//delete drink from local storage
-deleteDrinkStorage(){
-
-}
-
+  //delete drink from local storage
+  deleteDrinkStorage() {}
 }
