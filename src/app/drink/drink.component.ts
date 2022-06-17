@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { SaveDrinkService } from '../services/save-drink.service';
 
 @Component({
   selector: 'app-drink',
@@ -7,9 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DrinkComponent implements OnInit {
   @Input() drink: any;
+
+
   showDetails: boolean = false;
 
-  constructor() {}
+  constructor( private saveDrinkService: SaveDrinkService) {}
 
   ngOnInit(): void {}
 
@@ -20,5 +23,9 @@ export class DrinkComponent implements OnInit {
 
   onCloseDetails() {
     this.showDetails = false;
+  }
+
+  onSaveDrink() {
+    this.saveDrinkService.saveDrinkStorage(this.drink)
   }
 }

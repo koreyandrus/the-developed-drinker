@@ -8,3 +8,8 @@ h5 {
   font-size: 25px;
   font-family: cursive;
 }
+
+.btn-add{
+  background-color: purple;
+  color: white;
+}
