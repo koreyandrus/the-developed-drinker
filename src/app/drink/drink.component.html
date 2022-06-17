@@ -5,6 +5,12 @@
     <h5 class="card-title text-truncate">{{ drink.strDrink }}</h5>
     <span class="badge badge-success mr-2">{{ drink.strCategory }}</span>
     <span class="badge" [ngClass]="{'badge-danger': drink.strAlcoholic === 'Alcoholic', 'badge-success': drink.strAlcoholic === 'Non alcoholic'}">{{ drink.strAlcoholic }}</span>
-    <a class="btn btn-warning d-block mx-auto mt-2" (click)="onShowDetails()">Drink Details...</a>
+    <div class=" d-flex justify-content-around">
+      <a class="btn btn-warning d-block mt-2" (click)="onShowDetails()">Drink Details...</a>
+      <a class="btn btn-add  d-block mt-2" (click)="onSaveDrink()">
+        <span>&plus;</span>
+      </a>
+    </div>
   </div>
+
 </div>
