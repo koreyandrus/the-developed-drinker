@@ -27,4 +27,11 @@ export class DrinkComponent implements OnInit {
   onSaveDrink() {
     this.saveDrinkService.saveDrink(this.drink);
   }
+
+  onDeleteDrink(){
+    this.saveDrinkService.deleteDrink(this.drink);
+  }
+
+
+
 }

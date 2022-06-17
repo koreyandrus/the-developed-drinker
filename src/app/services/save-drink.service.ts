@@ -23,5 +23,13 @@ export class SaveDrinkService {
   }
 
   //delete drink from local storage
-  deleteDrinkStorage() {}
+  deleteDrink(idx: any) {
+    this.getDrinks();
+    if (idx !== -1){
+    this.drinks.splice(idx, 1);
+    localStorage.setItem('drinks', JSON.stringify(this.drinks));
+    alert('Deleted ' + idx.strDrink);
+  }
+  }
+
 }
