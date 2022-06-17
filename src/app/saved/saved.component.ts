@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SaveDrinkService } from '../services/save-drink.service';
 
 @Component({
   selector: 'app-saved',
@@ -9,7 +10,10 @@ export class SavedComponent implements OnInit {
   isLoading: boolean = false;
   savedDrinks: any;
 
-  constructor() {}
+  constructor(private drinkStorage: SaveDrinkService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.savedDrinks = this.drinkStorage.getDrinks();
+    console.log(this.savedDrinks);
+  }
 }
