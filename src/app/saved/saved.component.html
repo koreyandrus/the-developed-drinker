@@ -1,0 +1,4 @@
+<loading-spinner *ngIf="isLoading"></loading-spinner>
+<div class="search-results d-flex flex-wrap justify-content-center" *ngIf="savedDrinks">
+  <app-drink class="m-2" *ngFor="let drink of savedDrinks" [drink]="drink"></app-drink>
+</div>

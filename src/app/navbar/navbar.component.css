@@ -16,10 +16,10 @@ nav {
 }
 
 .nav-link:hover {
-  color: white;
+  color: hsl(177, 62%, 75%);
 }
 
 .nav-link.active {
-  color: white;
+  color: rgb(34, 145, 139);
   text-shadow: 1px 1px 2px black;
 }
