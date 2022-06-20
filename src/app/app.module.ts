@@ -15,6 +15,7 @@ import { RandomComponent } from './random/random.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { DrinkDetailsComponent } from './drink-details/drink-details.component';
 import { SavedComponent } from './saved/saved.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SavedComponent } from './saved/saved.component';
     LoadingSpinnerComponent,
     DrinkDetailsComponent,
     SavedComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
