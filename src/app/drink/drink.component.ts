@@ -9,6 +9,7 @@ import { SaveDrinkService } from '../services/save-drink.service';
 export class DrinkComponent implements OnInit {
   @Input() drink: any;
 
+  switch: boolean = true;
   showDetails: boolean = false;
 
   constructor(private saveDrinkService: SaveDrinkService) {}
@@ -26,10 +27,12 @@ export class DrinkComponent implements OnInit {
 
   onSaveDrink() {
     this.saveDrinkService.saveDrink(this.drink);
+    this.switch = ! this.switch;
   }
 
   onDeleteDrink(){
     this.saveDrinkService.deleteDrink(this.drink);
+
   }
 
 
