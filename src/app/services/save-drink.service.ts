@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -23,12 +24,12 @@ export class SaveDrinkService {
   }
 
   //delete drink from local storage
-  deleteDrink(idx: any) {
-    this.getDrinks();
+  deleteDrink(drink: any) {
+    const idx: any = this.drinks.indexOf(drink);
     if (idx !== -1){
     this.drinks.splice(idx, 1);
-    localStorage.setItem('drinks', JSON.stringify(this.drinks));
-    alert('Deleted ' + idx.strDrink);
+    localStorage.removeItem('drinks');
+    alert('Drink Has Been Deleted');
   }
   }
 
