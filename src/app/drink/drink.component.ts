@@ -7,7 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { SaveDrinkService } from '../services/save-drink.service';
 
 @Component({
@@ -15,9 +15,7 @@ import { SaveDrinkService } from '../services/save-drink.service';
   templateUrl: './drink.component.html',
   styleUrls: ['./drink.component.css'],
 })
-export class DrinkComponent implements OnInit, OnDestroy {
-  changeSubject = this.saveDrinkService.drinksChanged.subscribe();
-
+export class DrinkComponent implements OnInit {
   @Input() drink: any;
   @Input() saved!: boolean;
 
@@ -41,9 +39,5 @@ export class DrinkComponent implements OnInit, OnDestroy {
 
   onDeleteDrink() {
     this.saveDrinkService.deleteDrink(this.drink);
-  }
-
-  ngOnDestroy(): void {
-    this.changeSubject.unsubscribe();
   }
 }
