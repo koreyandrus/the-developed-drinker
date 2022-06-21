@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SaveDrinkService {
   drinks: any[] = [];
+  drinksChanged: Subject<any> = new Subject<any>();
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   getDrinks() {
     const drinksJson = localStorage.getItem('drinks');
@@ -25,12 +27,14 @@ export class SaveDrinkService {
 
   //delete drink from local storage
   deleteDrink(drink: any) {
-    const idx: any = this.drinks.indexOf(drink);
-    if (idx !== -1){
-    this.drinks.splice(idx, 1);
-    localStorage.removeItem('drinks');
-    alert('Drink Has Been Deleted');
-  }
-  }
+    this.getDrinks();
 
+    this.drinks = this.drinks.filter((d) => d.idDrink !== drink.idDrink);
+
+    localStorage.setItem('drinks', JSON.stringify(this.drinks));
+
+    this.drinksChanged.next(null);
+
+    alert(drink.strDrink + ' Has Been Deleted');
+  }
 }
