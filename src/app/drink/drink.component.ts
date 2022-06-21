@@ -1,4 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { SaveDrinkService } from '../services/save-drink.service';
 
 @Component({
@@ -6,10 +15,12 @@ import { SaveDrinkService } from '../services/save-drink.service';
   templateUrl: './drink.component.html',
   styleUrls: ['./drink.component.css'],
 })
-export class DrinkComponent implements OnInit {
-  @Input() drink: any;
+export class DrinkComponent implements OnInit, OnDestroy {
+  changeSubject = this.saveDrinkService.drinksChanged.subscribe();
 
-  switch: boolean = true;
+  @Input() drink: any;
+  @Input() saved!: boolean;
+
   showDetails: boolean = false;
 
   constructor(private saveDrinkService: SaveDrinkService) {}
@@ -18,7 +29,6 @@ export class DrinkComponent implements OnInit {
 
   onShowDetails() {
     this.showDetails = true;
-    console.log(this.drink);
   }
 
   onCloseDetails() {
@@ -27,14 +37,13 @@ export class DrinkComponent implements OnInit {
 
   onSaveDrink() {
     this.saveDrinkService.saveDrink(this.drink);
-    this.switch = ! this.switch;
   }
 
-  onDeleteDrink(){
+  onDeleteDrink() {
     this.saveDrinkService.deleteDrink(this.drink);
-
   }
 
-
-
+  ngOnDestroy(): void {
+    this.changeSubject.unsubscribe();
+  }
 }

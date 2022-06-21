@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { combineLatestInit } from 'rxjs/internal/observable/combineLatest';
-import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { RandomComponent } from './random/random.component';
 import { SavedComponent } from './saved/saved.component';
@@ -16,7 +14,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

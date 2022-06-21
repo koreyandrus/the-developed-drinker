@@ -1,6 +1,6 @@
 .card {
   background-color: rgb(34, 145, 139);
-  opacity: 0.8;
+  opacity: 1;
   border-radius: 10px;
 }
 
@@ -9,12 +9,12 @@ h5 {
   font-family: cursive;
 }
 
-.btn-add{
+.btn-add {
   background-color: purple;
   color: white;
 }
 
-.btn-delete{
+.btn-delete {
   background-color: yellowgreen;
-  color:black;
+  color: black;
 }
