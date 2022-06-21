@@ -2,5 +2,10 @@ footer {
     text-align: center;
     padding: 3px;
     background-color: rgb(82, 45, 18, 80);
-    color: white;
+    color: #ddc187;
   }
+
+a {
+    color: rgb(34, 145, 139);
+    
+}
