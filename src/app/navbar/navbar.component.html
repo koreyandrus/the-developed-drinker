@@ -1,61 +1,27 @@
-<!-- <nav class="navbar navbar-expand-lg  navbar-sticky">
-
-    <a class="navbar-brand nav-title" routerLink="/landing">The Developed Drinker</a>
-
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-
-
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/random" routerLinkActive="active">Random</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/search" routerLinkActive="active">Search</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/saved" routerLinkActive="active">Saved Drinks</a>
-        </li>
-      </ul>
-
-
-
-  </nav> -->
-
-  <!-- Create Navbar Menu -->
-<header class="bg-dark-brown" style="font-family: 'Olde English', sans-serif;">
-  <nav class="flex items-center justify-between p-6 h-20 bg-white shadow-sm">
-    <div routerLink="/" class="text-4xl text-light-brown logo">The Developed Drinker</div>
+<header class="bg-brown" style="font-family: 'Olde English', sans-serif;">
+  <nav class="flex items-center justify-around p-6 h-20 shadow-sm cursor-pointer">
+    <div routerLink="/" class="text-4xl text-tan logo">The Developed Drinker</div>
     <ul>
 
-      <li class="space-x-5 text-2xl text-light-brown">
-        <a routerLink="/random" class="hidden sm:inline-block">Random</a>
-        <a routerLink="/search" class="hidden sm:inline-block">Search</a>
-        <a routerLink="/saved" class="hidden sm:inline-block">Saved</a>
+      <li class="space-x-5 text-3xl text-tan">
+        <a routerLink="/random" routerLinkActive="active" class="nav-link hidden sm:inline-block">Random</a>
+        <a routerLink="/search" routerLinkActive="active" class="nav-link hidden sm:inline-block">Search</a>
+        <a routerLink="/saved" routerLinkActive="active" class="nav-link hidden sm:inline-block">Saved</a>
       </li>
       <div class="sm:hidden space-y-1 hover:cursor-pointer" (click)="showMenu()">
-        <span class="w-10 h-1 bg-light-brown rounded-full block"></span>
-        <span class="w-10 h-1 bg-light-brown rounded-full block"></span>
-        <span class="w-10 h-1 bg-light-brown rounded-full block"></span>
+        <span class="w-10 h-1 bg-tan rounded-full block"></span>
+        <span class="w-10 h-1 bg-tan rounded-full block"></span>
+        <span class="w-10 h-1 bg-tan rounded-full block"></span>
       </div>
     </ul>
 
   </nav>
   <div class="mobile-menu transition-all" *ngIf="menu">
     <ul>
-      <li class="text-2xl flex flex-col justify-center text-center text-light-brown">
-        <a routerLink="/random" class="sm:hidden">Random</a>
-        <a routerLink="/search" class="sm:hidden">Search</a>
-        <a routerLink="/saved" class="sm:hidden pb-5">Saved</a>
+      <li class="text-2xl flex flex-col justify-center text-center text-tan">
+        <a routerLink="/random" routerLinkActive="active" class="nav-link sm:hidden">Random</a>
+        <a routerLink="/search" routerLinkActive="active" class="nav-link sm:hidden">Search</a>
+        <a routerLink="/saved" routerLinkActive="active" class="nav-link sm:hidden pb-5">Saved</a>
       </li>
     </ul>
   </div>

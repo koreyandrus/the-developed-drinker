@@ -12,3 +12,7 @@
 a {
   color: rgb(34, 145, 139);
 } */
+
+button:hover {
+  color: hsl(177, 62%, 75%);
+}
