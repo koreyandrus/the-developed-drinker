@@ -3,9 +3,13 @@ footer {
     padding: 3px;
     background-color: rgb(82, 45, 18, 80);
     color: #ddc187;
+
+    margin-top: 20em;
+    position: relative;
+    width: 100%;
+    bottom: 0;
   }
 
 a {
     color: rgb(34, 145, 139);
-    
 }
