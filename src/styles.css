@@ -1,7 +1,12 @@
 @import url("https://fonts.cdnfonts.com/css/olde-english");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  background: url("/assets/developed_drinker_background.jpg") no-repeat center
-    center fixed;
+  background: url("./assets/developed_drinker_background.jpg") no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   background-size: cover;
 }

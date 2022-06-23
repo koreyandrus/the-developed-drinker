@@ -1,41 +1,19 @@
 .input-group {
   margin-top: 2em;
-  background-color: rgb(221, 193, 136, .80);
-  border-radius: .5em;
+  background-color: rgb(221, 193, 136, 0.8);
+  border-radius: 0.5em;
   text-align: center;
   box-shadow: 4px 4px 8px rgb(82, 45, 18);
   padding: 2em;
-  }
+}
 
+.title {
+  box-shadow: 4px 4px 8px rgb(82, 45, 18);
+}
 
-  .container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  h2{
-    font-family: "Olde English", sans-serif;
-    color: #ddc187;;
-    font-size: 4rem;
-    line-height: 1em;
-    padding: 0.5em;
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
-    min-width: 1em;
-    text-align: center;
-    text-shadow: 4px 4px 4px rgb(82, 45, 18);
-
-  }
-
-  .container2{
-    margin-top: 2em;
-    color: #ddc187;
-    background-color: rgb(34, 145, 139);
-    border-radius: .5em;
-    text-align: center;
-    box-shadow: 4px 4px 8px rgb(82, 45, 18);
-    padding: 2em;
-  }
-
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
