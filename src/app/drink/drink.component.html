@@ -1,18 +1,18 @@
-<div class="card" style="width: 18rem;">
+<div class="max-w-sm rounded overflow-hidden shadow-lg p-1 bg-amber-800" style="width: 18rem;">
   <app-drink-details *ngIf="showDetails" [drink]="drink" (closeBtnClick)="onCloseDetails()"></app-drink-details>
   <img class="card-img-top p-2" src="{{ drink.strDrinkThumb }}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title text-truncate">{{ drink.strDrink }}</h5>
     <span class="badge badge-success mr-2">{{ drink.strCategory }}</span>
     <span class="badge" [ngClass]="{'badge-danger': drink.strAlcoholic === 'Alcoholic', 'badge-success': drink.strAlcoholic === 'Non alcoholic'}">{{ drink.strAlcoholic }}</span>
-    <div class=" d-flex justify-content-around">
-      <a class="btn btn-warning d-block mt-2" (click)="onShowDetails()">Drink Details...</a>
-      <a class="btn btn-add  d-block mt-2" *ngIf="!saved" (click)="onSaveDrink()">
+    <div class="flex justify-around">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="onShowDetails()">Drink Details...</button>
+      <button class="bg-blue-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" *ngIf="!saved" (click)="onSaveDrink()">
         <span>&plus;</span>
-      </a>
-      <a class="btn btn-delete  d-block mt-2" *ngIf="saved" (click)="onDeleteDrink()">
+      </button>
+      <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" *ngIf="saved" (click)="onDeleteDrink()">
         <span>&minus;</span>
-      </a>
+      </button>
 
     </div>
   </div>
