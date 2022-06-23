@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+
   menu: boolean = false;
 
   constructor() {}
+
 
   ngOnInit(): void {}
 
