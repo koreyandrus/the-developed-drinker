@@ -1,3 +1,5 @@
+<div class="container2"><h2>Search by Drink Name or Ingredient</h2>
+
 <form class="container mt-2 mb-2" onsubmit="onSubmit()">
   <div class="search-form">
     <div class="row">
@@ -12,8 +14,9 @@
     </div>
   </div>
 </form>
+</div>
+
 <loading-spinner *ngIf="isLoading"></loading-spinner>
 <div class="search-results d-flex flex-wrap justify-content-center" *ngIf="searchResults">
   <app-drink class="m-2" *ngFor="let drink of searchResults" [drink]="drink"></app-drink>
 </div>
-
