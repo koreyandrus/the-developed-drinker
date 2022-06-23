@@ -11,6 +11,20 @@ nav {
   box-shadow: 0 15px 25px 0 rgba(214, 151, 23, 0.5);
 }
 
+.navbar-toggler{
+  width: 47px;
+  height: 34px;
+  background-color: rgb(34, 145, 139);;
+  border:none;
+}
+.navbar-toggler .line{
+  width: 100%;
+  float: left;
+  height: 2px;
+  background-color: #ddc187;
+  margin-bottom: 5px;
+}
+
 .nav-title {
   text-shadow: 1px 1px 2px black;
 }

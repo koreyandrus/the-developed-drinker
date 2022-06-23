@@ -1,20 +1,25 @@
-<nav class="navbar navbar-expand-lg  navbar-sticky">
+<nav class="navbar navbar-expand-lg navbar-sticky">
 
     <a class="navbar-brand nav-title" routerLink="/landing">The Developed Drinker</a>
 
+    <!-- Toggler/collapsibe Button -->
     <button
       class="navbar-toggler"
       type="button"
       data-toggle="collapse"
-      data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
       aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      aria-label="Toggle navigation"
+      (click)="collapsed = !collapsed">
+      <!-- <span class="navbar-toggler-icon"></span> -->
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line" style="margin-bottom: 0;"></span>
     </button>
 
-
-
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" routerLink="/random" routerLinkActive="active">Random</a>
@@ -26,7 +31,7 @@
           <a class="nav-link" routerLink="/saved" routerLinkActive="active">Saved Drinks</a>
         </li>
       </ul>
-
+  </div>
 
 
   </nav>
