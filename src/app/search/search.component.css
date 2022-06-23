@@ -1,15 +1,18 @@
 .input-group {
   margin-top: 2em;
-  background-color: rgb(221, 193, 136, .80);
-  border-radius: .5em;
+  background-color: rgb(221, 193, 136, 0.8);
+  border-radius: 0.5em;
   text-align: center;
   box-shadow: 4px 4px 8px rgb(82, 45, 18);
   padding: 2em;
-  }
+}
 
+.title {
+  box-shadow: 4px 4px 8px rgb(82, 45, 18);
+}
 
-  .container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
