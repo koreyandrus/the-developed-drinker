@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  collapsed: boolean = true;
+  show: boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {
