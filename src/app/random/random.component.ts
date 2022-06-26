@@ -14,7 +14,9 @@ export class RandomComponent implements OnInit {
 
   constructor(private apiService: ApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getRandomDrink();
+  }
 
   getRandomDrink() {
     this.randomDrink = null;

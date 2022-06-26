@@ -1,6 +1,6 @@
 <div class="alert w-full bg-blue text-center text-2xl text-white p-4" *ngIf="savedDrink"> <h2>{{ savedDrink.strDrink }} added to your saved drinks!</h2></div>
 <div class="title w-fit mx-auto m-6 px-6 py-4 bg-tan rounded ">
-  <h2 class="text-6xl text-brown text-center" style="font-family: 'Olde English', sans-serif;">Search Drink by Name</h2>
+  <h2 class="text-5xl text-brown text-center" style="font-family: 'Olde English', sans-serif;">Find a Drink</h2>
 
   <form class="flex justify-center" onsubmit="onSubmit($event)">
     <div class="mb-3 xl:w-96">
@@ -18,7 +18,7 @@
 </div>
 <div class="flex justify-center">
   <loading-spinner *ngIf="isLoading$ | async"></loading-spinner>
-  <div class="search-results w-4/5 flex flex-wrap justify-between pb-16" *ngIf="searchResults">
+  <div class="search-results w-4/5 flex flex-wrap justify-center pb-16" *ngIf="searchResults">
 
   <app-drink (drinkEmitter)="onSaveDrink($event)" class="m-2" *ngFor="let drink of searchResults" [search]="true" [drink]="drink"></app-drink>
 </div>
