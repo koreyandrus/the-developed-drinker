@@ -2,36 +2,17 @@
   box-shadow: 4px 4px 8px rgb(82, 45, 18);
 }
 
-p {
-  font-family: "Olde English", sans-serif;
-  color: #522d12;
-  font-size: 4rem;
-  line-height: 1em;
-  padding: 0.5em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  min-width: 1em;
-}
-
-h2 {
-  text-shadow: 1px 1px 2px #ffe8b9;
-}
-
 button {
-  border: solid 0.25em;
-  color: #ddc187;
+  font-family: "Olde English", sans-serif;
+  text-shadow: 1px 1px 2px #ffe8b9;
+  border: 3px solid #d8c59f;
   border-radius: 1em;
 
   text-align: center;
   text-decoration: none;
 
-  font-size: 1em;
-
-  background-image: linear-gradient(to bottom, #522d12, transparent);
-  border-color: #522d12;
-  /* font-style: italic; */
+  box-shadow: 4px 4px 8px rgb(82, 45, 18);
 }
 button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 2px 2px 4px rgb(82, 45, 18);
 }
