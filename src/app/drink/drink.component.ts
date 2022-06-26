@@ -1,14 +1,8 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
-import { SaveDrinkService } from '../services/save-drink.service';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { map } from 'rxjs';
+import { DataService } from '../services/data.service';
+import { StorageService } from '../services/storage.service';
+import { Drink } from '../shared/models/drink';
 
 @Component({
   selector: 'app-drink',
@@ -16,12 +10,15 @@ import { SaveDrinkService } from '../services/save-drink.service';
   styleUrls: ['./drink.component.css'],
 })
 export class DrinkComponent implements OnInit {
-  @Input() drink: any;
+  @Input() drink!: Drink;
   @Input() saved!: boolean;
 
   showDetails: boolean = false;
 
-  constructor(private saveDrinkService: SaveDrinkService) {}
+  constructor(
+    private dataService: DataService,
+    private storage: StorageService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -34,10 +31,35 @@ export class DrinkComponent implements OnInit {
   }
 
   onSaveDrink() {
-    this.saveDrinkService.saveDrink(this.drink);
+    let dataSub = this.dataService.savedDrinks
+      .pipe(
+        map((data) => {
+          if (data.some((drink) => drink.idDrink === this.drink.idDrink)) {
+            return;
+          }
+          alert(`Added ${this.drink.strDrink} to your saved drinks`);
+          let newSavedDrinks = [...data, this.drink];
+          this.dataService.setSavedDrinks(newSavedDrinks);
+          this.storage.setItem('drinks', newSavedDrinks);
+        })
+      )
+      .subscribe();
+    dataSub.unsubscribe();
   }
 
   onDeleteDrink() {
-    this.saveDrinkService.deleteDrink(this.drink);
+    let dataSub = this.dataService.savedDrinks
+      .pipe(
+        map((data) => {
+          let newSavedDrinks = data.filter(
+            (drink) => drink.idDrink !== this.drink.idDrink
+          );
+          this.dataService.setSavedDrinks(newSavedDrinks);
+          this.storage.setItem('drinks', newSavedDrinks);
+        })
+      )
+      .subscribe();
+
+    dataSub.unsubscribe();
   }
 }

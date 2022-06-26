@@ -1,5 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
+import { LoadingService } from '../services/loading.service';
 import { SaveDrinkService } from '../services/save-drink.service';
+import { Drink } from '../shared/models/drink';
 
 @Component({
   selector: 'app-saved',
@@ -7,19 +10,16 @@ import { SaveDrinkService } from '../services/save-drink.service';
   styleUrls: ['./saved.component.css'],
 })
 export class SavedComponent implements OnInit, OnDestroy {
-  isLoading: boolean = false;
-  savedDrinks: any;
-  drinksChangedSubscriber: any;
+  isLoading$ = this.loader.loading$;
+  savedDrinks: Drink[] = [];
 
-  constructor(private drinkStorage: SaveDrinkService) {}
+  constructor(
+    private drinkStorage: SaveDrinkService,
+    public loader: LoadingService,
+    public dataService: DataService
+  ) {}
 
-  ngOnInit(): void {
-    this.savedDrinks = this.drinkStorage.getDrinks();
-    this.drinksChangedSubscriber = this.drinkStorage.drinksChanged.subscribe();
-    console.log(this.savedDrinks);
-  }
+  ngOnInit(): void {}
 
-  ngOnDestroy(): void {
-    this.drinksChangedSubscriber.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 }

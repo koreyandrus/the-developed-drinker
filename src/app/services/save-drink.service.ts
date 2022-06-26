@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ export class SaveDrinkService {
   drinks: any[] = [];
   drinksChanged: Subject<any> = new Subject<any>();
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dataService: DataService) {}
 
   getDrinks() {
     const drinksJson = localStorage.getItem('drinks');
