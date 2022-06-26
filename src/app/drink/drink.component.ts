@@ -75,6 +75,7 @@ export class DrinkComponent implements OnInit {
       .subscribe();
 
     dataSub.unsubscribe();
+    this.drinkEmitter.emit(this.drink);
     this.saved = false;
   }
 }

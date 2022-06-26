@@ -8,14 +8,19 @@ import { Drink } from '../shared/models/drink';
   templateUrl: './saved.component.html',
   styleUrls: ['./saved.component.css'],
 })
-export class SavedComponent implements OnInit, OnDestroy {
+export class SavedComponent implements OnInit {
   isLoading$ = this.loader.loading$;
   search: boolean = false;
-  savedDrinks: Drink[] = [];
+  deletedDrink: Drink | null = null;
 
   constructor(public loader: LoadingService, public dataService: DataService) {}
 
   ngOnInit(): void {}
 
-  ngOnDestroy(): void {}
+  onDeleteDrink($event: Drink) {
+    this.deletedDrink = $event;
+    setTimeout(() => {
+      this.deletedDrink = null;
+    }, 3000);
+  }
 }
