@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { LoadingService } from '../services/loading.service';
-import { SaveDrinkService } from '../services/save-drink.service';
 import { Drink } from '../shared/models/drink';
 
 @Component({
@@ -13,11 +12,7 @@ export class SavedComponent implements OnInit, OnDestroy {
   isLoading$ = this.loader.loading$;
   savedDrinks: Drink[] = [];
 
-  constructor(
-    private drinkStorage: SaveDrinkService,
-    public loader: LoadingService,
-    public dataService: DataService
-  ) {}
+  constructor(public loader: LoadingService, public dataService: DataService) {}
 
   ngOnInit(): void {}
 
