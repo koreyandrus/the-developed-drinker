@@ -9,8 +9,6 @@ import { StorageService } from './services/storage.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = Constants.SiteTitle;
-
   constructor(
     private storageService: StorageService,
     private dataService: DataService
