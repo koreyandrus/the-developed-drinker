@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Drink } from '../shared/models/drink';
+import { Constants } from '../config/constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
   constructor(private http: HttpClient) {}
-  private url: string = 'https://www.thecocktaildb.com/api/json/v1/1/';
+  private url: string = Constants.API_ENDPOINT;
 
   getRandomCocktail() {
     return this.http.get(this.url + 'random.php');
