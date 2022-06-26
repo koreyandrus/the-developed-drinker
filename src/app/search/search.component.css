@@ -10,10 +10,3 @@
 .title {
   box-shadow: 4px 4px 8px rgb(82, 45, 18);
 }
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-

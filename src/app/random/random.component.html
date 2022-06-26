@@ -1,4 +1,4 @@
-
+<div class="alert w-full bg-blue text-center text-2xl text-white p-4" *ngIf="savedDrink"> <h2>{{ savedDrink.strDrink }} added to your saved drinks!</h2></div>
 <div class="choice w-fit mx-auto mt-6 rounded bg-tan text-brown">
   <div class="text-center w-full mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
     <h2 class="text-4xl text-brown sm:text-5xl" style="font-family: 'Olde English', sans-serif;">Click to get a random drink!</h2>
@@ -9,5 +9,5 @@
 <loading-spinner *ngIf="isLoading"></loading-spinner>
 
 <div class="random-drink flex justify-center mt-5" *ngIf="randomDrink">
-  <app-drink [drink]="randomDrink"></app-drink>
+  <app-drink (drinkEmitter)="onSaveDrink($event)" [search]="false" [drink]="randomDrink"></app-drink>
 </div>
