@@ -1,14 +1,3 @@
-/* h5 {
-  font-size: 25px;
-  font-family: cursive;
+.drink-card {
+  box-shadow: 4px 4px 8px rgb(82, 45, 18);
 }
-
-.btn-add {
-  background-color: purple;
-  color: white;
-}
-
-.btn-delete {
-  background-color: yellowgreen;
-  color: black;
-} */
