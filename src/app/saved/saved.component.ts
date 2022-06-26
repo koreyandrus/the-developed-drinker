@@ -10,6 +10,7 @@ import { Drink } from '../shared/models/drink';
 })
 export class SavedComponent implements OnInit, OnDestroy {
   isLoading$ = this.loader.loading$;
+  search: boolean = false;
   savedDrinks: Drink[] = [];
 
   constructor(public loader: LoadingService, public dataService: DataService) {}

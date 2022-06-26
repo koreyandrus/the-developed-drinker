@@ -8,7 +8,8 @@
     <div class="mt-4 mb-2 flex justify-between px-2">
       <button class="text-lg block font-semibold py-2 px-6 mr-2 text-green-100 hover:text-white bg-green-400 rounded-lg shadow hover:shadow-md transition duration-300" (click)="onShowDetails()">Details</button>
       <button class="text-lg block font-semibold py-2 px-6 text-white hover:text-white bg-[#0000FF] rounded-lg shadow hover:shadow-md transition duration-300" *ngIf="!saved" (click)="onSaveDrink()">Save</button>
-      <button class="text-lg block font-semibold py-2 px-6 text-white hover:text-white bg-[#962727] rounded-lg shadow hover:shadow-md transition duration-300" *ngIf="saved" (click)="onDeleteDrink()">Delete</button>
+      <button class="text-lg block font-semibold py-2 px-6 text-white hover:text-white bg-[#00aeff] rounded-lg shadow hover:shadow-md transition duration-300" *ngIf="saved && search" (click)="onSaveDrink()" disabled>Saved</button>
+      <button class="text-lg block font-semibold py-2 px-6 text-white hover:text-white bg-[#962727] rounded-lg shadow hover:shadow-md transition duration-300" *ngIf="saved && !search" (click)="onDeleteDrink()">Delete</button>
     </div>
   </div>
 </div>

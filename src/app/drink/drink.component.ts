@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { map } from 'rxjs';
 import { DataService } from '../services/data.service';
 import { StorageService } from '../services/storage.service';
@@ -11,7 +11,9 @@ import { Drink } from '../shared/models/drink';
 })
 export class DrinkComponent implements OnInit {
   @Input() drink!: Drink;
-  @Input() saved!: boolean;
+  saved!: boolean;
+  @Input() search!: boolean;
+  @Output() drinkEmitter = new EventEmitter<Drink>();
 
   showDetails: boolean = false;
 
@@ -20,7 +22,18 @@ export class DrinkComponent implements OnInit {
     private storage: StorageService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let dataSub = this.dataService.savedDrinks
+      .pipe(
+        map((drinks) => {
+          this.saved = drinks.some(
+            (drink) => drink.idDrink === this.drink.idDrink
+          );
+        })
+      )
+      .subscribe();
+    dataSub.unsubscribe();
+  }
 
   onShowDetails() {
     this.showDetails = true;
@@ -37,14 +50,15 @@ export class DrinkComponent implements OnInit {
           if (data.some((drink) => drink.idDrink === this.drink.idDrink)) {
             return;
           }
-          alert(`Added ${this.drink.strDrink} to your saved drinks`);
           let newSavedDrinks = [...data, this.drink];
+          this.drinkEmitter.emit(this.drink);
           this.dataService.setSavedDrinks(newSavedDrinks);
           this.storage.setItem('drinks', newSavedDrinks);
         })
       )
       .subscribe();
     dataSub.unsubscribe();
+    this.saved = true;
   }
 
   onDeleteDrink() {
@@ -61,5 +75,6 @@ export class DrinkComponent implements OnInit {
       .subscribe();
 
     dataSub.unsubscribe();
+    this.saved = false;
   }
 }

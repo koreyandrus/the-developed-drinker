@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
+import { Drink } from '../shared/models/drink';
 
 @Component({
   selector: 'app-random',
@@ -8,6 +9,7 @@ import { ApiService } from '../services/api.service';
 })
 export class RandomComponent implements OnInit {
   randomDrink: any;
+  savedDrink: Drink | null = null;
   isLoading: boolean = false;
 
   constructor(private apiService: ApiService) {}
@@ -26,5 +28,12 @@ export class RandomComponent implements OnInit {
 
       this.randomDrink = Object.values(data)[0][0];
     });
+  }
+
+  onSaveDrink($event: Drink) {
+    this.savedDrink = $event;
+    setTimeout(() => {
+      this.savedDrink = null;
+    }, 3000);
   }
 }
