@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Drink } from '../shared/models/drink';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,9 @@ export class ApiService {
   }
 
   searchCocktailName(name: string) {
-    return this.http.get(this.url + 'search.php?s=' + name);
+    return this.http.get<{ drinks: Drink[] }>(
+      this.url + 'search.php?s=' + name
+    );
   }
 
   searchIngredientName(name: string) {

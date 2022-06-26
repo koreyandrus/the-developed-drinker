@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ApiService } from '../services/api.service';
+import { DataService } from '../services/data.service';
+import { LoadingService } from '../services/loading.service';
+import { Drink } from '../shared/models/drink';
 
 @Component({
   selector: 'app-search',
@@ -9,9 +12,14 @@ import { ApiService } from '../services/api.service';
 })
 export class SearchComponent implements OnInit {
   searchTerm = new FormControl('');
-  searchResults: any;
-  isLoading: boolean = false;
-  constructor(private apiService: ApiService) {}
+  searchResults: Drink[] = [];
+  isLoading$ = this.loader.loading$;
+
+  constructor(
+    private apiService: ApiService,
+    public dataService: DataService,
+    public loader: LoadingService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -22,15 +30,11 @@ export class SearchComponent implements OnInit {
   }
 
   searchCocktail(search: string) {
-    this.searchResults = null;
-    if (!this.searchResults) {
-      this.isLoading = true;
-    }
+    this.loader.show();
+
     this.apiService.searchCocktailName(search).subscribe((data) => {
-      if (data) {
-        this.isLoading = false;
-      }
-      this.searchResults = Object.values(data)[0];
+      this.searchResults = data.drinks;
+      this.loader.hide();
     });
   }
 }

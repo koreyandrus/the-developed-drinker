@@ -35,7 +35,6 @@ export class DrinkDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.getIngredients();
     this.getMeasurements();
-    console.log(this.measurements);
   }
 
   getIngredients() {

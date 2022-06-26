@@ -1,4 +1,4 @@
-<loading-spinner *ngIf="isLoading"></loading-spinner>
+<loading-spinner *ngIf="isLoading$ | async"></loading-spinner>
 <div class="search-results flex flex-wrap justify-center items-center py-4 pb-16" >
-  <app-drink class="m-2" *ngFor="let drink of savedDrinks" [drink]="drink" [saved]="true"></app-drink>
+  <app-drink class="m-2" *ngFor="let drink of dataService.savedDrinks | async" [drink]="drink" [saved]="true"></app-drink>
 </div>

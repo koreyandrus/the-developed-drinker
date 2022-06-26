@@ -1,4 +1,4 @@
-<div class="w-[250px] p-3 bg-tan rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 relative">
+<div class="drink-card w-[250px] p-3 bg-tan rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 relative">
   <app-drink-details *ngIf="showDetails" [drink]="drink" (closeBtnClick)="onCloseDetails()"></app-drink-details>
   <img class="w-64 object-cover rounded-t-md" src="{{ drink.strDrinkThumb }}" alt="" />
   <div class="mt-4">
