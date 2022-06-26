@@ -1,4 +1,5 @@
+<div class="alert w-full bg-[#781212] text-center text-2xl text-white p-4" *ngIf="deletedDrink"> <h2>{{ deletedDrink.strDrink }} removed from your saved drinks!</h2></div>
 <loading-spinner *ngIf="isLoading$ | async"></loading-spinner>
 <div class="search-results flex flex-wrap justify-center items-center py-4 pb-16" >
-  <app-drink class="m-2" *ngFor="let drink of dataService.savedDrinks | async" [search]="false" [drink]="drink"></app-drink>
+  <app-drink class="m-2" (drinkEmitter)="onDeleteDrink($event)" *ngFor="let drink of dataService.savedDrinks | async" [search]="false" [drink]="drink"></app-drink>
 </div>
