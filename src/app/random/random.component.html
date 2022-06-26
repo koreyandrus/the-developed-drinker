@@ -9,5 +9,5 @@
 <loading-spinner *ngIf="isLoading"></loading-spinner>
 
 <div class="random-drink flex justify-center mt-5" *ngIf="randomDrink">
-  <app-drink (drinkEmitter)="onSaveDrink($event)" [search]="false" [drink]="randomDrink"></app-drink>
+  <app-drink (drinkEmitter)="onSaveDrink($event)" [search]="true" [drink]="randomDrink"></app-drink>
 </div>
