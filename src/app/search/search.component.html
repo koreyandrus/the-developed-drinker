@@ -18,7 +18,7 @@
 </div>
 
   <loading-spinner *ngIf="isLoading$ | async"></loading-spinner>
-  <div class="search-results flex flex-wrap justify-center pb-16" *ngIf="searchResults">
+  <div class="search-results flex flex-wrap justify-start pb-16" *ngIf="searchResults">
 
   <app-drink class="m-2" *ngFor="let drink of searchResults" [drink]="drink"></app-drink>
 </div>
