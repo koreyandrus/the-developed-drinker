@@ -3,7 +3,6 @@
 
 An app to get you a random cocktail recipe, or to help find the perfect cocktail for you!
 
-### TEST
 
 ## Authors
 
